@@ -1,9 +1,10 @@
 from flask import Flask
-from bs4 import BeautifulSoup
+#from bs4 import BeautifulSoup
 import requests
-import json
+#import json
 from datetime import datetime
-currentDateAndTime = datetime.now()
+import pytz
+currentDateAndTime = datetime.now(pytz.timezone("ROC"))
 """
 app=Flask(__name__)
 @app.route("/")
@@ -33,16 +34,16 @@ for k in finaldata:
     #i+=1
     #print(" 氣溫:",k["weatherElement"][2]["time"][0]["parameter"]["parameterName"],"度c")
 a=a+("最後更新時間："+str(currentDateAndTime))
-
+"""
 for k in a:
     for j in k:
         print(j,end=" ")
     print()
-
+"""
 app=Flask(__name__)
 @app.route("/")
 def hello():
     return a
 
-if __name__=="__main__":
-    app.run()
+#if __name__=="__main__":
+ #   app.run()
